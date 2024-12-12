@@ -103,7 +103,7 @@ public class Scrabble {
 			// non-whitespace characters. Whitespace is either space characters, or  
 			// end-of-line characters.
 			String input = in.readString();
-			if (input == ".") {
+			if (input.equals(".")) {
 				break;
 			}
 			if (MyString.subsetOf(input, hand) == true && isWordInDictionary(input) == true) {
@@ -156,10 +156,10 @@ public class Scrabble {
 	public static void main(String[] args) {
 		//// Uncomment the test you want to run
 		///testBuildingTheDictionary();  
-		testScrabbleScore();    
+		///testScrabbleScore();    
 		////testCreateHands();  
-		////testPlayHands();
-		////playGame();
+		testPlayHands();
+		playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
