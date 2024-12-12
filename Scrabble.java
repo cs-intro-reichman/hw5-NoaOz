@@ -61,14 +61,18 @@ public class Scrabble {
 	// If the word includes the sequence "runi", adds 1000 points to the game.
 	public static int wordScore(String word) {
 		int score = 0;
+		int sum = 0;
 		String letters = "abcdefghijklmnopqrstuvwxyz";
 
 		for (int i = 0; i < letters.length(); i++) {
 			for (int j = 0; j < word.length(); j++) {
 				if (letters.charAt(i) == word.charAt(j)) {
-					score = score + SCRABBLE_LETTER_VALUES[i];
+					sum = sum + SCRABBLE_LETTER_VALUES[i];
 				}
+			}
 		}
+		score = sum*word.length();
+
 			if (word.indexOf('r') != -1 && word.indexOf('u') != -1 && word.indexOf('n') != -1 && word.indexOf('i') != -1) {
 				score = score + 1000;
 			} 
@@ -76,7 +80,7 @@ public class Scrabble {
 				score = score + 50;
 			}
 
-		}
+	
 		return 0;
 	}
 
