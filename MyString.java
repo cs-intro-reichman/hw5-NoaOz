@@ -15,17 +15,7 @@ public class MyString {
         //System.out.println(a);
         //System.out.println(spacedString(a)+"noa");
         //System.out.println(insertRandomly('s', "cat"));
-        System.out.println("1 " + subsetOf("space", "space")); // 1 true
-        System.out.println("2 " + subsetOf("capse", "space")); // 2 true
-        System.out.println("3 " + subsetOf("claim", "space")); // 3 false 
-        System.out.println("4 " + subsetOf("sapce", "claim")); // 4 false 
-        System.out.println("5 " + subsetOf("sap", "space")); // 5 true
-        System.out.println("6 " + subsetOf("pass", "space")); // 6 false
-        System.out.println("7 " + subsetOf("", "")); // 7 true
-        System.out.println("8 " + subsetOf("ss", "")); // 8 false
-        System.out.println("9 " + subsetOf("runi", "running")); // 9 true
-        System.out.println("10 " + subsetOf("runix", "runi")); // 10 false 
-        System.out.println("11 " + subsetOf("runi", "quiz")); // 11 false
+
     }
 
     /**
