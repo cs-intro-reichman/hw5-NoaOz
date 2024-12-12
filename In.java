@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.Socket;
+import java.net.URI;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -177,6 +178,7 @@ public final class In {
 
             // or URL from web
             if (url == null) {
+                url = new URL(name);
             }
 
             URLConnection site = url.openConnection();
