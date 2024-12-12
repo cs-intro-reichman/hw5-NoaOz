@@ -73,7 +73,7 @@ public class Scrabble {
 		}
 		score = sum * (word.length());
 
-			if (word.indexOf('r') != -1 && word.indexOf('u') != -1 && word.indexOf('n') != -1 && word.indexOf('i') != -1) {
+			if (MyString.subsetOf("runi",word)) {
 				score = score + 1000;
 			} 
 			if (word.length() == HAND_SIZE) {
@@ -114,7 +114,7 @@ public class Scrabble {
 			}
 			if (MyString.subsetOf(input, hand) == true && isWordInDictionary(input) == true) {
 				score = score + wordScore(input);
-				System.out.println(input + " earned " + wordScore(input) + " points. \nScore: " + score + " points");
+				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
 				hand = MyString.remove(hand, input);
 			}
 			else {
