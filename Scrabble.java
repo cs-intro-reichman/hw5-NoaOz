@@ -71,7 +71,7 @@ public class Scrabble {
 				}
 			}
 		}
-		score = sum*word.length();
+		score = sum * (word.length());
 
 			if (word.indexOf('r') != -1 && word.indexOf('u') != -1 && word.indexOf('n') != -1 && word.indexOf('i') != -1) {
 				score = score + 1000;
@@ -81,7 +81,7 @@ public class Scrabble {
 			}
 
 	
-		return 0;
+		return score;
 	}
 
 	// Creates a random hand of length (HAND_SIZE - 2) and then inserts
