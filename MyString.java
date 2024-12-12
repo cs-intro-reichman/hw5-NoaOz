@@ -58,15 +58,25 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-        boolean found = true;
-        for (int j = 0; j < str1.length(); j++) {
-            int n = countChar(str2, str1.charAt(j));
-            int m = countChar(str1, str1.charAt(j));
-            if (n == 0 || n != m) {
-                found = false; 
-            } 
+        if (str1.isEmpty() || str1.equals(str2)){
+            return true;
         }
-        return found;
+
+        if (str1.length() > str2.length()){
+            return false;
+        } 
+        else 
+        {
+            for (int i = 0; i < str1.length(); i++){
+
+                if (countChar(str1, str1.charAt(i)) > countChar(str2, str1.charAt(i))){
+                    return false;
+                }
+                
+            }
+        }
+        return true;
+
     }
 
 
