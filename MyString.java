@@ -14,8 +14,6 @@ public class MyString {
         String a = randomStringOfLetters(n);
         System.out.println(a);
         System.out.println(spacedString(a)+"noa");
-        System.out.println(remove("meet","committee"));
-        System.out.println(remove("meett","committee"));
         System.out.println(insertRandomly('s', "cat"));
     }
 
@@ -52,13 +50,13 @@ public class MyString {
         boolean found = true;
         for (int j = 0; j < str1.length(); j++) {
             int n = countChar(str2, str1.charAt(j));
-            if (n == 0) {
+            int m = countChar(str1, str1.charAt(j));
+            if (n == 0 || n != m) {
                 found = false;
-                break;
-                
-            }
+                break;  
+            } 
         }
-    return found;
+        return found;
     }
 
 
@@ -114,18 +112,18 @@ public class MyString {
     public static String remove(String str1, String str2) {
         String a = "";
         int i = 0;
-        while (i < str2.length()) {
-            int n = countChar(str1, str2.charAt(i));
+        while (i < str1.length()) {
+            int n = countChar(str2, str1.charAt(i));
             if (n == 0) {
-                a = a +  str2.charAt(i);
+                a = a +  str1.charAt(i);
             }
             else {
-            int index = str1.indexOf(str2.charAt(i));
+            int index = str2.indexOf(str1.charAt(i));
             if (index == 0) {
-                str1 = str1.substring(1, str1.length());
+                str2 = str2.substring(1, str2.length());
             }
             else {
-            str1 = str1.substring(0, index) + str1.substring(index +1, str1.length());
+            str2 = str2.substring(0, index) + str2.substring(index +1, str2.length());
             }
         }
         i++ ; 
