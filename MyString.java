@@ -3,12 +3,19 @@
  */
 public class MyString {
     public static void main(String args[]) {
-        String hello = "hello";
-        System.out.println(countChar(hello, 'h'));
-        System.out.println(countChar(hello, 'l'));
-        System.out.println(countChar(hello, 'z'));
-        System.out.println(spacedString(hello));
-        //// Put your other tests here.
+       // String hello = "hello";
+        //System.out.println(countChar(hello, 'h'));
+       // System.out.println(countChar(hello, 'l'));
+        //System.out.println(countChar(hello, 'z'));
+       // System.out.println(spacedString(hello));
+       // System.out.println(subsetOf("hell", hello));
+       // System.out.println(subsetOf("hlllllleo", hello));
+       // int n = 5;
+       // String a = randomStringOfLetters(n);
+        //System.out.println(a);
+        //System.out.println(spacedString(a)+"noa");
+        //System.out.println(insertRandomly('s', "cat"));
+
     }
 
     /**
@@ -20,8 +27,13 @@ public class MyString {
      * @return the number of times c appears in str
      */
     public static int countChar(String str, char ch) {
-        //// Replace the following statement with your code
-        return 0;
+        int counter= 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ch) {
+                counter ++;
+            }
+        }
+        return counter;
     }
 
     /** Returns true if str1 is a subset string str2, false otherwise
@@ -36,9 +48,28 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-         //// Replace the following statement with your code
-        return false;
+        if (str1.isEmpty() || str1.equals(str2)){
+            return true;
+        }
+
+        if (str1.length() > str2.length()){
+            return false;
+        } 
+        else 
+        {
+            for (int i = 0; i < str1.length(); i++){
+
+                if (countChar(str1, str1.charAt(i)) > countChar(str2, str1.charAt(i))){
+                    return false;
+                }
+                
+            }
+        }
+        return true;
+
     }
+
+
 
     /** Returns a string which is the same as the given string, with a space
      * character inserted after each character in the given string, except
@@ -49,8 +80,14 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString(String str) {
-        //// Replace the following statement with your code
-        return null;
+        String spacedstr = "" ;
+        for (int i = 0; i < str.length(); i++) {
+            spacedstr = spacedstr + str.charAt(i);
+            if (i != str.length() - 1) {
+                spacedstr = spacedstr + ' ' ;
+            }
+        }
+    return spacedstr;
     }
   
     /**
@@ -64,8 +101,13 @@ public class MyString {
      * @return a randomly generated string, consisting of 'n' lowercase letters
      */
     public static String randomStringOfLetters(int n) {
-        //// Replace the following statement with your code
-        return null;
+        String letters = "abcdefghijklmnopqrstuvwxyz";
+        String a = "";
+        for (int i = 0; i < n; i++) {
+            char ch = letters.charAt((int) (Math.random()*26));
+            a = a + ch;
+        }
+        return a;
     }
 
     /**
@@ -78,9 +120,26 @@ public class MyString {
      * @return a string consisting of str1 minus all the characters of str2
      */
     public static String remove(String str1, String str2) {
-       //// Replace the following statement with your code
-        return null;
+        String a = "";
+        int i = 0;
+        while (i < str1.length()) {
+            int n = countChar(str2, str1.charAt(i));
+            if (n == 0) {
+                a = a +  str1.charAt(i);
+            }
+            else {
+            int index = str2.indexOf(str1.charAt(i));
+            if (index == 0) {
+                str2 = str2.substring(1, str2.length());
+            }
+            else {
+            str2 = str2.substring(0, index) + str2.substring(index +1, str2.length());
+            }
+        }
+        i++ ; 
     }
+    return a;
+}
 
     /**
      * Returns a string consisting of the given string, with the given 
